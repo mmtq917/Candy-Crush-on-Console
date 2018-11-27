@@ -16,7 +16,7 @@ int selectLevel(){
   return level; // returns an integer which is the level
 }
 
-void printGrid(int matrix){
+char printGrid(int matrix){
   char grid[matrix+2][2*matrix+1];              // The grid Creator
 
     for (int i = 0 ; i <= 2*matrix+1 ; i++){    //Print first and last row exclusively
@@ -51,9 +51,16 @@ void printGrid(int matrix){
         }
         cout << endl;
     }
+    return grid;
 }
 
-int fillCandies(int level){
+void fillCandies(int arr[], int s){
+    
+    
+}
+
+
+char createCandies(int level){
   char totalCandies[15] = {'c','O','i','N','d','p','z','H','x','T','@','#','$','&','*'}; // These are all the candies we will use. Special characters are special candies and vice versa
 
   char candies[level*3];                    // Can dies used in the current level
@@ -65,13 +72,20 @@ int fillCandies(int level){
     candies[j] = candies[i] ;
     j++;
   }
-  return 0;
+  
+  //####################################
+  //####################################
+  
+  
+  return candies;
 }
 
 int candyCrush(int level){                  // The fucking game, Takes input the level. level range from (1-3)
-  printGrid(level * 5) ;                    // print the grid for the condies
+  int grid = printGrid(level * 5) ;                    // print the grid for the condies
+  
+  int candies = createCandies(level);
+  
 
-  fillCandies(level);
 }
 
 void salamDua(){
